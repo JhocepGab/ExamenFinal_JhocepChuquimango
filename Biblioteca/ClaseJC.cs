@@ -44,7 +44,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 0] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void GenerarPrecioM()
@@ -55,7 +55,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 1] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void GenerarPrecioMi()
@@ -66,7 +66,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 2] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void GenerarPrecioJ()
@@ -77,7 +77,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 3] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void GenerarPrecioV()
@@ -88,7 +88,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 4] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void GenerarPrecioS()
@@ -99,7 +99,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 5] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void GenerarPrecioD()
@@ -110,7 +110,7 @@ namespace Biblioteca
                 int nota = r.Next(15, 200);
                 Console.WriteLine(arti[i] + ": " + nota);
                 matriz[i, 6] = nota;
-                Thread.Sleep(100); //tiempo
+                Thread.Sleep(400); //tiempo
             }
         }
         public void Tablageneral()
