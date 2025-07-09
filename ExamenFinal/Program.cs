@@ -44,7 +44,7 @@ namespace ExamenFinal
             Console.WriteLine("ESPERE UN MOMENTO, EL SIGUIENTE ES EL PROMEDIO");
             Console.ResetColor();
             Thread.Sleep(9500);
-            an.Promedio();
+            an.Promedio(v);
         }
     }
 }

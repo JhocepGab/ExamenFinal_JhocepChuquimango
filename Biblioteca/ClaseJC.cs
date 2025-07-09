@@ -199,7 +199,7 @@ namespace Biblioteca
                 Console.WriteLine(Espacios(arti[i], 20) + EspaciosIzq(minMax[0, i].ToString(), 8) + EspaciosIzq(minMax[1, i].ToString(), 8));
             }
         }
-        public void Promedio()
+        public void Promedio(string prom)
         {
             double[,] promedios = new double[7, 1];
 
@@ -220,7 +220,7 @@ namespace Biblioteca
 
             for (int i = 0; i < 7; i++)
             {
-                string prom = promedios[i, 0].ToString("F2");
+                double v = promedios[i, 0];
                 Console.WriteLine(Espacios(arti[i], 20) + EspaciosIzq(prom, 10));
             }
         }
