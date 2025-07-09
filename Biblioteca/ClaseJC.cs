@@ -116,7 +116,6 @@ namespace Biblioteca
         public void Tablageneral()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-
             Console.Write(Espacios("Artículo", 20));
             string[] dias = { "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom" };
             for (int i = 0; i < dias.Length; i++)
@@ -135,11 +134,11 @@ namespace Biblioteca
                 Console.Write(Espacios(arti[i], 20));
                 for (int j = 0; j < 7; j++)
                 {
-                    Console.Write(EspaciosIzq(matriz[i, j].ToString(), 6));
+                    Console.Write(EspaciosIzq(Cadena(matriz[i, j]), 6));
                     sumaFila += matriz[i, j];
                     sumaCols[j] += matriz[i, j];
                 }
-                Console.Write(EspaciosIzq(sumaFila.ToString(), 8));
+                Console.Write(EspaciosIzq(Cadena(sumaFila), 8));
                 Console.WriteLine();
             }
 
@@ -148,13 +147,14 @@ namespace Biblioteca
             int totalGeneral = 0;
             for (int j = 0; j < 7; j++)
             {
-                Console.Write(EspaciosIzq(sumaCols[j].ToString(), 6));
+                Console.Write(EspaciosIzq(Cadena(sumaCols[j]), 6));
                 totalGeneral += sumaCols[j];
             }
-            Console.Write(EspaciosIzq(totalGeneral.ToString(), 8));
+            Console.Write(EspaciosIzq(Cadena(totalGeneral), 8));
             Console.WriteLine();
             Console.ResetColor();
         }
+
         public string Espacios(string texto, int longitud)
         {
             while (texto.Length < longitud)
@@ -172,6 +172,7 @@ namespace Biblioteca
             }
             return texto;
         }
+
         public void minymax()
         {
             int[,] minMax = new int[2, 7];
@@ -196,10 +197,11 @@ namespace Biblioteca
 
             for (int i = 0; i < 7; i++)
             {
-                Console.WriteLine(Espacios(arti[i], 20) + EspaciosIzq(minMax[0, i].ToString(), 8) + EspaciosIzq(minMax[1, i].ToString(), 8));
+                Console.WriteLine(Espacios(arti[i], 20) + EspaciosIzq(Cadena(minMax[0, i]), 8) + EspaciosIzq(Cadena(minMax[1, i]), 8));
             }
         }
-        public void Promedio(string prom)
+
+        public void Promedio()
         {
             double[,] promedios = new double[7, 1];
 
@@ -210,7 +212,7 @@ namespace Biblioteca
                 {
                     suma += matriz[i, j];
                 }
-                promedios[i, 0] = suma / 7;
+                promedios[i, 0] = suma / 7.0;
             }
 
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -220,9 +222,46 @@ namespace Biblioteca
 
             for (int i = 0; i < 7; i++)
             {
-                double v = promedios[i, 0];
+                string prom = Decimales(promedios[i, 0]);
                 Console.WriteLine(Espacios(arti[i], 20) + EspaciosIzq(prom, 10));
             }
+        }
+
+        public string Cadena(int valor)
+        {
+            string resultado = "";
+            int copia = valor;
+            int divisor = 1;
+            while (copia >= 10)
+            {
+                divisor *= 10;
+                copia /= 10;
+            }
+            copia = valor;
+            while (divisor > 0)
+            {
+                int digito = copia / divisor;
+                resultado += (char)(digito + 48);
+                copia %= divisor;
+                divisor /= 10;
+            }
+            return resultado;
+        }
+
+        public string Decimales(double valor)
+        {
+            int parteEntera = (int)valor;
+            int decimales = (int)((valor - parteEntera) * 100);
+            string texto = Cadena(parteEntera) + ".";
+            if (decimales < 10)
+            {
+                texto += "0" + Cadena(decimales);
+            }
+            else
+            {
+                texto += Cadena(decimales);
+            }
+            return texto;
         }
     }
 }

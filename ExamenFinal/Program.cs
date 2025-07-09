@@ -35,7 +35,7 @@ namespace ExamenFinal
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("ESPERE UN MOMENTO, EL SIGUIENTE ES SOBRE CANTIDADES MÁXIMAS Y MÍNIMAS VENDIDAS");
             Console.ResetColor();
-            Thread.Sleep(9500);
+            Thread.Sleep(2500);
             an.minymax();
             Console.WriteLine();
             Console.WriteLine();
@@ -43,8 +43,8 @@ namespace ExamenFinal
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("ESPERE UN MOMENTO, EL SIGUIENTE ES EL PROMEDIO");
             Console.ResetColor();
-            Thread.Sleep(9500);
-            an.Promedio(v);
+            Thread.Sleep(2500);
+            an.Promedio();
         }
     }
 }
